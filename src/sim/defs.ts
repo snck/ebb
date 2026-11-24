@@ -85,7 +85,7 @@ const deg = (d: number) => (d * Math.PI) / 180;
 // ---------------------------------------------------------------- regular enemies
 
 export const NOVICE: EnemyDef = {
-  kind: 'novice', name: 'Drowned Novice', hp: 40, radius: 0.45, speed: 1.7, sight: 7, flinch: true,
+  kind: 'novice', name: 'Drowned Novice', hp: 56, radius: 0.45, speed: 1.7, sight: 7, flinch: true,
   preferDist: 1.3, idleMs: [500, 900], mass: 1,
   attacks: [
     {
@@ -106,7 +106,7 @@ export const NOVICE: EnemyDef = {
 };
 
 export const HOOKBEARER: EnemyDef = {
-  kind: 'hook', name: 'Hookbearer', hp: 60, radius: 0.45, speed: 2.3, sight: 8, flinch: true,
+  kind: 'hook', name: 'Hookbearer', hp: 80, radius: 0.45, speed: 2.3, sight: 8, flinch: true,
   preferDist: 2.6, idleMs: [500, 1000], mass: 1.2,
   attacks: [
     {
@@ -132,7 +132,7 @@ export const HOOKBEARER: EnemyDef = {
 };
 
 export const HOUND: EnemyDef = {
-  kind: 'hound', name: 'Brinehound', hp: 32, radius: 0.4, speed: 4.4, sight: 8, flinch: true,
+  kind: 'hound', name: 'Brinehound', hp: 42, radius: 0.4, speed: 4.4, sight: 8, flinch: true,
   preferDist: 3.4, idleMs: [700, 1300], mass: 0.7,
   attacks: [
     {
@@ -149,7 +149,7 @@ export const HOUND: EnemyDef = {
 };
 
 export const WICK: EnemyDef = {
-  kind: 'wick', name: 'Wick', hp: 24, radius: 0.35, speed: 2.0, sight: 8.5, flinch: true, floats: true,
+  kind: 'wick', name: 'Wick', hp: 30, radius: 0.35, speed: 2.0, sight: 8.5, flinch: true, floats: true,
   preferDist: 5.5, idleMs: [1100, 1700], mass: 0.4,
   attacks: [
     {
@@ -161,7 +161,7 @@ export const WICK: EnemyDef = {
 };
 
 export const SHELLBOUND: EnemyDef = {
-  kind: 'shell', name: 'Shellbound', hp: 110, radius: 0.62, speed: 1.4, sight: 7, flinch: false, frontGuard: 0.25,
+  kind: 'shell', name: 'Shellbound', hp: 130, radius: 0.62, speed: 1.4, sight: 7, flinch: false, frontGuard: 0.25,
   preferDist: 1.8, idleMs: [600, 1000], mass: 3,
   attacks: [
     {

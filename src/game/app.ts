@@ -379,7 +379,7 @@ export class App {
       <div class="ending-wrap">
         <p class="e1">The tide goes out.</p>
         <p class="e2">For the first time in a hundred years, the abbey stands in open air.<br>The drowned walk down to the low water, and do not come back.</p>
-        <p class="e3">${mins} minutes · fell ${p.deaths} times · rose ${p.deaths} times</p>
+        <p class="e3">${mins} minute${mins === 1 ? '' : 's'} · ${p.deaths === 0 ? 'never fell' : `fell ${p.deaths} time${p.deaths === 1 ? '' : 's'}, and rose every time`}</p>
         <button id="again" class="primary">Begin anew</button>
       </div>`);
     this.btn(el, '#again', () => { const settings = this.save.settings; clearSave(); this.save = freshSave(); this.save.settings = settings; this.newWorld(); this.showTitle(); });

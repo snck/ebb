@@ -506,7 +506,7 @@ export class Renderer {
     // a small, consistent glow that grows through every wind-up (all enemies, all attacks)
     if (ph === 'windup' && pose.glow > 0) {
       const g = ctx.createRadialGradient(X, Y, 0, X, Y, r * S * 2.2);
-      g.addColorStop(0, `rgba(255,240,220,${0.10 + 0.12 * pose.glow})`); g.addColorStop(1, 'rgba(0,0,0,0)');
+      g.addColorStop(0, `rgba(255,236,210,${0.14 + 0.26 * pose.glow})`); g.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(X, Y, r * S * 2.2, 0, TAU); ctx.fill();
     }
     let jx = 0, jy = 0;

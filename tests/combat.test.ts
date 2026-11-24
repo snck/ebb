@@ -192,7 +192,7 @@ describe('enemy behaviour', () => {
     b.takeHit(w, 1, 10, false);
     expect(b.state).toBe('broken');
   });
-  it('regular enemies flinch at most once per 1.5 s (no stun-lock)', () => {
+  it('regular enemies flinch at most once per 2 s (no stun-lock), and not late in a wind-up', () => {
     const w = emptyWorld();
     const e = new Enemy(ENEMY_DEFS.novice, 18, 58, 'x');
     w.enemies = [e]; e.wake(w);
@@ -202,6 +202,15 @@ describe('enemy behaviour', () => {
     e.state = 'idle';
     e.takeHit(w, 1, 0, false);
     expect(e.state).toBe('idle');
+  });
+  it('late in a wind-up a regular enemy cannot be interrupted', () => {
+    const w = emptyWorld();
+    const e = new Enemy(ENEMY_DEFS.novice, 17.5, 58, 'x');
+    w.enemies = [e]; e.wake(w);
+    let n = 0;
+    while (!(e.state === 'attack' && e.stepT > ms2t(e.curStep!.windup) * 0.6) && n++ < 600) { w.step(NO_INPUT); w.player.hp = 100; }
+    e.takeHit(w, 1, 0, false);
+    expect(e.state).toBe('attack');
   });
 });
 

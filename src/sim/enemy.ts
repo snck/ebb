@@ -7,7 +7,7 @@ import type { World } from './world';
 export type EState = 'sleep' | 'idle' | 'attack' | 'flinch' | 'broken' | 'roar' | 'dead' | 'return' | 'dormant' | 'intro';
 
 const FLINCH_T = ms2t(450);
-const FLINCH_COOLDOWN_T = ms2t(1500);
+const FLINCH_COOLDOWN_T = ms2t(2000);
 const BROKEN_T = ms2t(2200);
 const ROAR_T = ms2t(1100);
 
@@ -109,7 +109,9 @@ export class Enemy {
       }
       if (this.phase === 1 && this.def.phase2At && this.hp <= this.def.hp * this.def.phase2At) this.pendingPhase = true;
     } else if (this.def.flinch) {
-      const armored = this.state === 'attack' && this.curStep?.armor;
+      // you can interrupt an enemy EARLY in its wind-up, not late: armoured from 55% of the wind-up through the swing
+      const st = this.curStep;
+      const armored = this.state === 'attack' && !!st && (st.armor || (this.stepT >= ms2t(st.windup) * 0.55 && this.stepT < ms2t(st.windup) + ms2t(st.active)));
       if (!armored && w.tick - this.lastFlinchTick >= FLINCH_COOLDOWN_T) {
         this.lastFlinchTick = w.tick;
         this.endAttack(); this.state = 'flinch'; this.t = 0;
