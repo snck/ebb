@@ -51,15 +51,17 @@ export const PLAYER = {
 };
 
 /**
- * The "fair view": enemies may only START an attack when the player can see them,
- * i.e. inside this region relative to the player (metres, +y is screen-down).
- * The camera always shows at least 10 m vertically and 17.7 m horizontally, centred on the player,
- * and the bottom corners are where the thumbs rest, so the region excludes them.
+ * The "fair view": enemies may only START an attack (or the next step of a combo) where the player can see them.
+ * The camera keeps the player CAM_BIAS m above the screen centre and always shows at least 11 m vertically and
+ * 19.5 m horizontally (iPhone SE landscape). The thumbs rest in the bottom corners, so the region excludes them:
+ * the full width only above the thumbs, a narrower band between them, and a channel at the bottom centre.
+ * Coordinates are metres relative to the player, +y is screen-down.
  */
+export const CAM_BIAS = 0.9;
 export function inFairView(dx: number, dy: number): boolean {
-  if (Math.abs(dx) > 7.4) return false;
-  if (dy < -4.3 || dy > 4.0) return false;
-  // bottom corners (thumb zones)
-  if (dy > 2.2 && Math.abs(dx) > 4.6) return false;
-  return true;
+  const sx = Math.abs(dx), sy = dy - CAM_BIAS; // position relative to the screen centre
+  if (sx > 6.6 || sy < -4.2) return false;
+  if (sy <= 0.6) return true; // above the thumbs: full width
+  if (sx <= 4.4 && sy <= 2.0) return true; // between the thumbs
+  return sx <= 2.6 && sy <= 4.6; // bottom-centre channel
 }
