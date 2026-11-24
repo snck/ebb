@@ -211,7 +211,7 @@ I stopped a second, Mother Ebb-only real-touch run partway: it runs in real time
   whole-area runs completed. Tests check every objective is reachable, boss 1 can't be skipped, and the shortcut works.
   Two hangs were found and fixed on the way (enemy leash, Cycle 4). *Caveat:* tested in emulated Chromium, not on a physical iPhone or Android device.
 - [x] **Every enemy and boss attack has a learnable, consistent tell, and the design doc lists them with their reaction windows.**
-  DESIGN.md §5 lists all 43 attack steps (generated from the game data) with tell, cue→hit, combo gap and recovery.
+  DESIGN.md §5 lists all 42 attack steps (generated from the game data) with tell, cue→hit, combo gap and recovery.
   Rule R3 (same tell ⇒ same timing) is tested. It caught and fixed two violations (Cycle 2).
 - [x] **Every reaction window is achievable for a normal human on a touchscreen.**
   Every cue→hit is ≥ 500 ms (budget: 350 ms slow reaction + 80 ms touch latency + 33 ms i-frame start = 463 ms), and every
