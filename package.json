@@ -1,0 +1,23 @@
+{
+  "name": "vespertide",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host",
+    "test": "vitest run",
+    "sim": "tsx tools/run-sims.ts",
+    "fairness": "tsx tools/fairness-report.ts",
+    "mobile-check": "tsx tools/mobile-check.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "playwright": "^1.65.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^6.4.6",
+    "vitest": "^4.1.12"
+  }
+}
