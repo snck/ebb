@@ -157,7 +157,7 @@ export class Enemy {
         const d = dist(this, this.home);
         if (d < 0.3) { this.state = 'idle'; this.aggro = false; this.hp = this.def.hp; return; }
         this.moveToward(w, this.home, this.def.speed);
-        if (p.alive && dist(this, p) < this.def.sight * 0.6 && w.level.lineOfSight(this, p)) this.state = 'idle';
+        if (p.alive && d < 8 && dist(this, p) < this.def.sight * 0.6 && w.level.lineOfSight(this, p)) this.state = 'idle';
         return;
       }
       case 'idle': this.thinkIdle(w); return;
@@ -187,7 +187,8 @@ export class Enemy {
     }
     if (!this.boss) {
       if (!los) this.noSightT++; else this.noSightT = 0;
-      if (d > 16 || this.noSightT > ms2t(5000)) { this.state = 'return'; this.aggro = false; return; }
+      // leash: regular enemies never follow you far from where they live
+      if (d > 16 || this.noSightT > ms2t(5000) || dist(this, this.home) > 13) { this.state = 'return'; this.aggro = false; return; }
     }
     if (this.boss && this.pendingPhase) { this.toIdle(w); return; }
     // evade (boss) after several hits taken quickly

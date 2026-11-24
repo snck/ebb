@@ -41,7 +41,7 @@ export const PLAYER = {
   healApplyMs: 700,
   healAmount: 42,
   healMoveMult: 0.3,
-  baseDraughts: 4,
+  baseDraughts: 3,
   // Being hit
   hitstunMs: 300,
   hitInvulnMs: 300,

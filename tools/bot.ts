@@ -66,6 +66,8 @@ export const PROFILES = {
     return { name: 'learning', reactMean: 290, reactSd: 35, latency: [40, 90], timingSd: 55, earlyBias: 30, errRate: 0.04,
       knows: (s) => { if (!memo.has(s)) memo.set(s, r.chance(frac)); return memo.get(s)!; }, greed: 0.25, smart: true, healHp: 50, staminaReserve: 20 };
   },
+  /** perfect discipline (spacing, healing, stamina, punishing what it sees) but knows no patterns: can you win by reflexes alone? */
+  reactor: (): BotProfile => ({ name: 'reactor', reactMean: 280, reactSd: 30, latency: [40, 90], timingSd: 40, earlyBias: 0, errRate: 0.025, knows: () => false, greed: 0.08, smart: true, healHp: 55, staminaReserve: 26 }),
   expert: (): BotProfile => ({ name: 'expert', reactMean: 280, reactSd: 30, latency: [40, 90], timingSd: 40, earlyBias: 0, errRate: 0.025, knows: () => true, greed: 0.08, smart: true, healHp: 55, staminaReserve: 26 }),
 };
 
@@ -309,7 +311,10 @@ export class Bot {
     }
 
     if (mode === 'idle') return inp;
-    if (!e || !e.alive()) return this.explore(w, inp);
+    if (!e || !e.alive()) {
+      if (pl.hp <= this.p.healHp + 15 && pl.draughts > 0 && pl.state === 'free') { inp.heal = true; return inp; }
+      return this.explore(w, inp);
+    }
 
     const d = dist(e, pl);
     const reach = PLAYER.attacks[0].reach + e.def.radius - 0.15;

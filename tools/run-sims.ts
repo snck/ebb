@@ -74,6 +74,7 @@ for (const boss of bosses) {
   row.naive = cell(boss, () => PROFILES.naive());
   row.learning = cell(boss, (s) => PROFILES.learning(s));
   row.expert = cell(boss, () => PROFILES.expert());
+  row.reactor = cell(boss, () => PROFILES.reactor());
   const dn = Math.max(30, Math.floor(N / 4));
   for (const mode of ['spamAttack', 'spamRoll', 'corner', 'behind', 'turtle'] as const) {
     row[mode] = cell(boss, () => ({ ...PROFILES.naive(), mode }), dn);

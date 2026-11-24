@@ -87,9 +87,9 @@ describe('world flow', () => {
     const it = w.markers('item')[0];
     w.player.reset(it.x, it.y);
     w.step(NO_INPUT);
-    expect(w.player.maxDraughts).toBe(5);
+    expect(w.player.maxDraughts).toBe(4);
     w.respawn();
-    expect(w.player.maxDraughts).toBe(5);
+    expect(w.player.maxDraughts).toBe(4);
   });
   it('the ending triggers only after the final boss', () => {
     const w = new World({ spawnRegular: false, progress: { ...newProgress(), defeated: ['boss1', 'boss2'] } });
