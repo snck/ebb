@@ -291,17 +291,17 @@ export const ABBESS: EnemyDef = {
     {
       id: 'ab.wave', minRange: 0, maxRange: 9, weight: 3, cooldown: 2000,
       steps: [{ id: 'ab.wave', name: 'Tide wave', windup: 900, active: 60, after: 800, pose: 'wave', sfx: 'tellWave',
-        damage: 29, ring: { speed: 6.5, maxR: 11, width: 0.7 }, armor: true, dodge: 'through' }],
+        damage: 29, ring: { speed: 5.5, maxR: 11, width: 0.7 }, armor: true, dodge: 'through' }],
     },
     {
       id: 'ab.triple', minRange: 0, maxRange: 9, weight: 2, cooldown: 5000,
       steps: [
         { id: 'ab.tw1', name: 'Three waves (1st)', windup: 900, active: 60, after: 90, pose: 'wave', sfx: 'tellWave3',
-          damage: 24, ring: { speed: 6.5, maxR: 11, width: 0.7 }, armor: true, dodge: 'through' },
-        { id: 'ab.tw2', name: 'Three waves (2nd)', windup: 500, active: 60, after: 90, pose: 'wave', sfx: 'tellWaveS',
-          damage: 24, ring: { speed: 6.5, maxR: 11, width: 0.7 }, armor: true, dodge: 'through' },
-        { id: 'ab.tw3', name: 'Three waves (3rd)', windup: 500, active: 60, after: 1100, pose: 'wave', sfx: 'tellWaveS',
-          damage: 24, ring: { speed: 6.5, maxR: 11, width: 0.7 }, armor: true, dodge: 'through' },
+          damage: 24, ring: { speed: 5.5, maxR: 11, width: 0.7 }, armor: true, dodge: 'through' },
+        { id: 'ab.tw2', name: 'Three waves (2nd)', windup: 560, active: 60, after: 90, pose: 'wave', sfx: 'tellWaveS',
+          damage: 24, ring: { speed: 5.5, maxR: 11, width: 0.7 }, armor: true, dodge: 'through' },
+        { id: 'ab.tw3', name: 'Three waves (3rd)', windup: 560, active: 60, after: 1100, pose: 'wave', sfx: 'tellWaveS',
+          damage: 24, ring: { speed: 5.5, maxR: 11, width: 0.7 }, armor: true, dodge: 'through' },
       ],
     },
     {
@@ -324,8 +324,8 @@ export const ABBESS: EnemyDef = {
       steps: [
         { id: 'ab.dw1', name: 'Undertow dive', windup: 1900, active: 150, after: 50, pose: 'dive', sfx: 'tellDive2',
           hit: { kind: 'circle', r: 2.6 }, damage: 36, leap: { jumpAt: 500, lockAt: 1300 }, armor: true, dodge: 'away' },
-        { id: 'ab.dw2', name: 'Wave after the dive', windup: 500, active: 60, after: 1250, pose: 'wave', sfx: 'tellWaveS',
-          damage: 26, ring: { speed: 6.5, maxR: 11, width: 0.7 }, armor: true, dodge: 'through' },
+        { id: 'ab.dw2', name: 'Wave after the dive', windup: 560, active: 60, after: 1250, pose: 'wave', sfx: 'tellWaveS',
+          damage: 26, ring: { speed: 5.5, maxR: 11, width: 0.7 }, armor: true, dodge: 'through' },
       ],
     },
     {

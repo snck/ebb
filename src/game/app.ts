@@ -309,18 +309,16 @@ export class App {
     const s = this.save.settings;
     const el = this.overlay('pause', `
       <div class="panel">
-        <h2>Still water</h2>
-        <div class="menu"><button id="resume" class="primary">Resume</button></div>
+        <div class="ptop"><h2>Still water</h2><div class="menu row"><button id="resume" class="primary">Resume</button><button id="quit">Title</button></div></div>
         <div class="settings">
           <label>Sound <input id="vol" type="range" min="0" max="1" step="0.05" value="${s.volume}"></label>
           <label>Music <input id="mus" type="range" min="0" max="1" step="0.05" value="${s.music}"></label>
-          <label>Button size
+          <label>Buttons
             <span class="seg"><button data-s="0.85" class="${s.scale < 0.9 ? 'on' : ''}">S</button><button data-s="1" class="${s.scale === 1 ? 'on' : ''}">M</button><button data-s="1.15" class="${s.scale > 1.1 ? 'on' : ''}">L</button></span></label>
-          <label>Buttons on the left <input id="swap" type="checkbox" ${s.swap ? 'checked' : ''}></label>
+          <label>Left-handed <input id="swap" type="checkbox" ${s.swap ? 'checked' : ''}></label>
           <label>Vibration <input id="hap" type="checkbox" ${s.haptics ? 'checked' : ''}></label>
         </div>
-        <p class="stats">Deaths ${this.world.progress.deaths} · ${Math.floor(this.world.progress.playMs / 60000)} min · draughts ${this.world.player.maxDraughts}</p>
-        <div class="menu row"><button id="quit">Title</button></div>
+        <p class="stats">Fallen ${this.world.progress.deaths} · ${Math.floor(this.world.progress.playMs / 60000)} min · ${this.world.player.maxDraughts} draughts · progress is saved</p>
       </div>`);
     this.btn(el, '#resume', () => this.resume());
     this.btn(el, '#quit', () => { this.persist(); this.audio.stopBoss(); this.newWorld(); this.showTitle(); });

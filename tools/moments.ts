@@ -41,8 +41,8 @@ await shot('09-death');
 await p.tap('#rise').catch(() => {}); await p.waitForTimeout(500);
 await ev(`(() => { const w = __game.world; const a = w.level.data.arenas[2]; w.player.x = a.cx - 3; w.player.y = a.cy; })()`);
 await p.waitForFunction(`!!__game.world.fight && __game.world.fight.boss.state !== 'intro'`, null, { timeout: 10000, polling: 'raf' });
-await ev(`(() => { const w = __game.world; const b = w.fight.boss; b.hp = 1; b.takeHit(w, 10, 0, false); })()`);
-await p.waitForTimeout(1500);
+await ev(`(() => { const w = __game.world; const b = w.fight.boss; b.hp = 1; w.player.x = b.x - 2.0; w.player.y = b.y; w.player.facing = 0; __game.controls.queue.push('attack'); })()`);
+await p.waitForTimeout(2200);
 await shot('10-victory');
 // 6. ending
 await ev(`(() => { const w = __game.world; const e = w.markers('ending')[0]; w.player.x = e.x; w.player.y = e.y; })()`);

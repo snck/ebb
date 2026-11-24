@@ -114,6 +114,7 @@ export class Renderer {
     return { x: lerp(p.x, o.x, alpha), y: lerp(p.y, o.y, alpha) };
   }
   snapshot(w: World) {
+    if (this.prev.size > w.enemies.length + 8) this.prev = new Map(); // enemies are recreated on respawn
     this.prev.set(w.player, { x: w.player.x, y: w.player.y });
     for (const e of w.enemies) this.prev.set(e, { x: e.x, y: e.y });
   }
@@ -351,7 +352,7 @@ export class Renderer {
 
   private drawPlayer(w: World, p: Player, pos: Vec) {
     const ctx = this.ctx, S = this.scale;
-    let X = this.sx(pos.x), Y = this.sy(pos.y);
+    const X = this.sx(pos.x), Y = this.sy(pos.y);
     const r = PLAYER.radius;
     if (!p.alive) {
       const k = Math.min(1, p.t / 60);
@@ -420,8 +421,6 @@ export class Renderer {
         this.fillShape(p.swingShape(), { x: pos.x, y: pos.y, facing: f }, p.riposteSwing ? `rgba(160,235,255,${0.45 * k})` : `rgba(255,235,200,${0.28 * k})`, p.riposteSwing ? `rgba(220,250,255,${0.9 * k})` : `rgba(255,245,225,${0.6 * k})`);
       }
     }
-    void X; void Y;
-    X = 0; Y = 0;
   }
 
   private fillShape(shape: HitShape, at: { x: number; y: number; facing: number }, fill: string, stroke?: string) {

@@ -10,7 +10,8 @@
     "test": "vitest run",
     "sim": "tsx tools/run-sims.ts",
     "fairness": "tsx tools/fairness-report.ts",
-    "mobile-check": "tsx tools/mobile-check.ts"
+    "mobile-check": "tsx tools/mobile-check.ts",
+    "walkthrough": "tsx tools/walkthrough.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

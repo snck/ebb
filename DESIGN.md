@@ -140,7 +140,7 @@ Human budget on a phone: reaction 250–350 ms + touch latency ≈ 50–80 ms + 
 * **R5. What you see is what hits.** Hit shapes are drawn from the exact geometry the hit test uses (test: polygon vs hit test agree on >99% of sample points).
 
 Current result: **0 violations. Shortest cue→hit is 500 ms** (Brinehound bite, a reactable nuisance attack).
-Bosses range from 533 to 1850 ms.
+Boss attacks range from 500 ms (the Cantor's quick second cut, part of a learnable rhythm) to 1550 ms (the Netwarden's held slam).
 
 ---
 
@@ -221,15 +221,15 @@ hit. "Recovery" is the punish window after the last step of an attack. All times
 | The Pale Cantor | Cantor cut (2nd) | sweepL / tellNote2 | wind-up pose + sound | **500** | 817 | 117 | (combo) | steps in 0.8 m late in the wind-up; tracks you until 340 ms |
 | The Pale Cantor | Cantor cut (quick 3rd) | sweepR / tellNote1 | wind-up pose + sound | **533** | 850 | 117 | (combo) | steps in 0.8 m late in the wind-up; tracks you until 380 ms |
 | The Pale Cantor | Cantor cut (late 4th) | overhead / tellNote3 | wind-up pose + sound | **950** | 1267 | 117 | 950 | steps in 1.5 m late in the wind-up; tracks you until 780 ms |
-| Mother Ebb | Tide wave | wave / tellWave | wind-up pose + sound | **900** | – | 67 | 800 | wave expands at 6.5 m/s: +154 ms per metre of distance |
-| Mother Ebb | Three waves (1st) | wave / tellWave3 | wind-up pose + sound | **900** | – | 67 | (combo) | wave expands at 6.5 m/s: +154 ms per metre of distance |
-| Mother Ebb | Three waves (2nd) | wave / tellWaveS | wind-up pose + sound | **500** | 650 | 67 | (combo) | wave expands at 6.5 m/s: +154 ms per metre of distance |
-| Mother Ebb | Three waves (3rd) | wave / tellWaveS | wind-up pose + sound | **500** | 650 | 67 | 1100 | wave expands at 6.5 m/s: +154 ms per metre of distance |
+| Mother Ebb | Tide wave | wave / tellWave | wind-up pose + sound | **900** | – | 67 | 800 | wave expands at 5.5 m/s: +182 ms per metre of distance |
+| Mother Ebb | Three waves (1st) | wave / tellWave3 | wind-up pose + sound | **900** | – | 67 | (combo) | wave expands at 5.5 m/s: +182 ms per metre of distance |
+| Mother Ebb | Three waves (2nd) | wave / tellWaveS | wind-up pose + sound | **567** | 717 | 67 | (combo) | wave expands at 5.5 m/s: +182 ms per metre of distance |
+| Mother Ebb | Three waves (3rd) | wave / tellWaveS | wind-up pose + sound | **567** | 717 | 67 | 1100 | wave expands at 5.5 m/s: +182 ms per metre of distance |
 | Mother Ebb | Reef claw | sweepR / tellCoral | wind-up pose + sound | **850** | – | 167 | 900 | steps in 1.3 m late in the wind-up; tracks you until 660 ms |
 | Mother Ebb | Undertow dive | dive / tellDive | landing shadow stops & darkens | **600** | – | 150 | 1350 | shadow tracks you for 800 ms first |
 | Mother Ebb | Swell | burst / tellSwell | wind-up pose + sound | **600** | – | 133 | 750 |  |
 | Mother Ebb | Undertow dive | dive / tellDive2 | landing shadow stops & darkens | **600** | – | 150 | (combo) | shadow tracks you for 800 ms first |
-| Mother Ebb | Wave after the dive | wave / tellWaveS | wind-up pose + sound | **500** | 700 | 67 | 1250 | wave expands at 6.5 m/s: +154 ms per metre of distance |
+| Mother Ebb | Wave after the dive | wave / tellWaveS | wind-up pose + sound | **567** | 767 | 67 | 1250 | wave expands at 5.5 m/s: +182 ms per metre of distance |
 | Mother Ebb | Riptide (1st claw) | sweepR / tellCoral2 | wind-up pose + sound | **750** | – | 167 | (combo) | steps in 1 m late in the wind-up; tracks you until 560 ms |
 | Mother Ebb | Riptide (late 2nd claw) | sweepL / tellCoral | wind-up pose + sound | **900** | 1300 | 167 | 1000 | steps in 1.2 m late in the wind-up; tracks you until 700 ms |
 

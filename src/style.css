@@ -23,18 +23,22 @@ button.primary { background: rgba(120, 90, 50, 0.55); border-color: rgba(255, 21
 button:active { transform: scale(0.97); background: rgba(255, 255, 255, 0.15); }
 .menu { display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 18px; }
 .menu.row { flex-direction: row; justify-content: center; }
+.ptop button { min-width: 120px; }
 #title { background: radial-gradient(ellipse at 50% 60%, rgba(30, 50, 60, 0.55), rgba(4, 6, 9, 0.92) 70%); }
 .title-wrap { text-align: center; }
 .title-wrap h1 { font-size: clamp(56px, 14vh, 110px); letter-spacing: 0.35em; margin: 0 0 0 0.35em; font-weight: 400; color: #efe3c8;
   text-shadow: 0 0 30px rgba(140, 200, 220, 0.25); }
 .title-wrap .sub { margin: 0; font-style: italic; color: #a9b8bf; font-size: 17px; }
 .title-wrap .hint { margin-top: 18px; font-size: 13px; color: #7d868c; }
-.panel { background: rgba(10, 13, 17, 0.92); border: 1px solid rgba(230, 220, 200, 0.18); border-radius: 14px; padding: 18px 26px;
-  max-height: 100%; overflow-y: auto; min-width: min(460px, 92vw); text-align: center; }
+.panel { background: rgba(10, 13, 17, 0.92); border: 1px solid rgba(230, 220, 200, 0.18); border-radius: 14px; padding: 14px 22px;
+  max-height: 100%; overflow-y: auto; min-width: min(460px, 92vw); max-width: min(760px, 96vw); text-align: center; }
 .panel h2 { margin: 0; font-weight: 400; letter-spacing: 0.12em; color: #cfe0e6; }
-.settings { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 14px 0 4px; text-align: left; }
+.ptop { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.ptop .menu { margin-top: 0; }
+.settings { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; margin: 12px 0 4px; text-align: left; }
+@media (max-width: 560px) { .settings { grid-template-columns: 1fr; } }
 .settings label { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 44px; font-size: 16px; }
-.settings input[type=range] { width: 46%; height: 34px; accent-color: #d9a866; }
+.settings input[type=range] { width: 52%; height: 34px; accent-color: #d9a866; }
 .settings input[type=checkbox] { width: 30px; height: 30px; accent-color: #d9a866; }
 .seg { display: inline-flex; gap: 6px; }
 .seg button { min-width: 52px; min-height: 44px; padding: 6px 12px; }
