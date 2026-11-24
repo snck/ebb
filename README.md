@@ -1,5 +1,7 @@
 # EBB: the drowned abbey of Vesper
 
+**Play it:** https://snck.github.io/ebb/ (open on your phone, turn it sideways; Add to Home Screen to install)
+
 A short, **hard but fair** action game for phone browsers. One area, five kinds of enemies, three bosses.
 You will die. Every death tells you what hit you and what you were doing. Learn it, and you will win with
 exactly the strength you had on your first try.
